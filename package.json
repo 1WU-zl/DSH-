@@ -1,0 +1,56 @@
+{
+  "name": "dsh-script-manager",
+  "version": "0.1.0",
+  "description": "DSH 脚本管理器：集中登记脚本、受控运行（禁用的会被宿主拒绝）、审计每一次运行、检测脚本新增与改动，并在会话输入框左侧提供入口。",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "1WU-zl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1WU-zl/DSH-.git"
+  },
+  "homepage": "https://github.com/1WU-zl/DSH-#readme",
+  "bugs": {
+    "url": "https://github.com/1WU-zl/DSH-/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "cordis",
+    "scripts",
+    "audit"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/all.mjs"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  }
+}

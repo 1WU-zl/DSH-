@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+
+# 测试临时目录（测试用 os.tmpdir()，这里兜底）
+.tmp/
+test-artifacts/
+
+# 日志与探针
+*.log
+*.ndjson
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

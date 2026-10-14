@@ -1,0 +1,4 @@
+# dsh bundle patch: 把本插件插入 profile 的 layer stack
+- insert:
+    - id: dsh-script-manager
+      name: 'dsh-script-manager'
